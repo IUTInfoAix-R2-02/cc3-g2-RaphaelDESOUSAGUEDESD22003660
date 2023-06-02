@@ -16,7 +16,7 @@
 <?import javafx.scene.control.Button?>
 
 <HBox id="scene" prefHeight="420.0" prefWidth="650.0" spacing="20.0" style="-fx-background-color:#74e3e3" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.amu.iut.cc3.ToileController">
-    <Pane prefHeight="400.0" prefWidth="400.0">
+    <Pane fx:id="scene" prefHeight="400.0" prefWidth="400.0">
         <Circle centerX="200.0" centerY="200.0" radius="200.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="150.0" styleClass="toile" />
         <Circle centerX="200.0" centerY="200.0" radius="100.0" styleClass="toile" />
@@ -52,7 +52,7 @@
         </rowConstraints>
         <children>
             <Label text="Compétence1- Réaliser" />
-            <Label text="Compétence2- Réaliser" GridPane.rowIndex="1" />
+            <Label text="Compétence2- Optimiser" GridPane.rowIndex="1" />
             <Label text="Compétence3- Administrer" GridPane.rowIndex="2" />
             <Label text="Compétence4- Gérer" GridPane.rowIndex="3" />
             <Label text="Compétence5- Conduire" GridPane.rowIndex="4" />
