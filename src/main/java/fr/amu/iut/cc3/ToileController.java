@@ -3,6 +3,7 @@ package fr.amu.iut.cc3;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -41,9 +42,11 @@ public class ToileController implements Initializable {
     Button videButton;
     @FXML
     Pane scene;
+    @FXML
+    Label error1;
 
     @FXML
-     Pane diagramPane;
+    Label error2;
 
     private List<Circle> pointsList;
     private List<Line> linesList;
@@ -62,20 +65,6 @@ public class ToileController implements Initializable {
                 *  (value / noteMaximale));
     }
 
-    @FXML
-
-    private Circle Dessiner(double value, int axis) {
-        double x = getXRadarChart(value, axis);
-        double y = getYRadarChart(value, axis);
-
-        Circle circle = new Circle(x, y, 5);
-        circle.setCenterX(x);
-        circle.setCenterY(y);
-        circle.setRadius(8);
-
-        scene.getChildren().add(circle);
-        return circle;
-    }
     @FXML
     private void traceClicked() {
         traceButton.addEventHandler(MouseEvent.MOUSE_CLICKED, actionEvent -> {
@@ -141,6 +130,22 @@ public class ToileController implements Initializable {
         linesList.clear();
 
     }
+
+    private Circle Dessiner(double value, int axis) {
+        error1.setVisible(true);
+        error2.setVisible(true);
+        double x = getXRadarChart(value, axis);
+        double y = getYRadarChart(value, axis);
+
+        Circle circle = new Circle(x, y, 5);
+        circle.setCenterX(x);
+        circle.setCenterY(y);
+        circle.setRadius(8);
+
+        scene.getChildren().add(circle);
+        return circle;
+    }
+
 
 
     }
